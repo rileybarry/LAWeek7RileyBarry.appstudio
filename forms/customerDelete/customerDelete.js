@@ -26,16 +26,18 @@ customerDelete.onshow = function() {
 
 btnDelete.onclick = function() {
   let cusName = inptDelete.value
-  let strName = cusName.toString()
   for (i = 0; i < results.length; i++) {
-  if (cusName == results[i][1]) {
-    query = `DELETE FROM customer WHERE name=${inptDelete.value}`
-    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
-    if (req.status == 200) {
-      if (req.responseText == 500) {
-        lblDelete.value = `You have successfully deleted the customer named ${cusName}`
+    if (cusName == results[i][1]) {
+      query = "DELETE FROM customer WHERE name= '" + cusName + "'"
+      req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
+      if (req.status == 200) {
+        if (req.responseText == 500) {
+          lblDelete.value = `You have successfully deleted the customer named ${cusName}`
+        } else {
+          lblDelete.value = `There was a problem deleting ${cusName} from the database.`
+        }
       } else {
-        lblDelete.value = `There was a problem deleting ${cusName} from the database.`
+        lblDelete.value = 'The customer is not in the database'
       }
     } else {
       lblDelete.value = "Error code: " + req.status
