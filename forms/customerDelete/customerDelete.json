@@ -25,7 +25,7 @@
         "forms",
         "customerDelete",
         "Elements",
-        "Button1.json"
+        "btnDelete.json"
       ]
     },
     {
@@ -35,6 +35,15 @@
         "customerDelete",
         "Elements",
         "lblDelete.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "customerDelete",
+        "Elements",
+        "inptDelete.json"
       ]
     }
   ],
