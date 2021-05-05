@@ -1,4 +1,3 @@
-/*
 let query = ''
 let req = {}
 let netID = 'rwb12128'
@@ -24,4 +23,3 @@ customerSelect.onshow = function() {
   } else // the transit didn't work - bad wifi? server turned off?
     lblMessage.value = "Error code: " + req.status
 }
-*/

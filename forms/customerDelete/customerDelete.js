@@ -1,9 +1,3 @@
-let query = ''
-let req = {}
-let netID = 'rwb12128'
-let pw = 'Speedyrwb645'
-let results = []
-
 customerDelete.onshow = function() {
   query = "SELECT * FROM customer"
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
